@@ -709,10 +709,25 @@ html, body {
 @media (min-width: 1240px) {
     .synapciaparrafo {
  color: #d9d9d9;
- font-size: 31px;
+ font-size: 31px;}
 }
-
-
+.botonparrafo {
+     background-color: #f39223;
+    color: #1a1745;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 20px; /* Bordes redondeados como en la imagen */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: capitalize;
+}
+.botonparrafo:hover {
+    background-color: #ffaa45;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
 
 
