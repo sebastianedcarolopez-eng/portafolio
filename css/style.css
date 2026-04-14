@@ -1,0 +1,918 @@
+/* Configuración General */
+*
+/* Estilos para el texto del menú */
+.nav-link {
+    color: white !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    
+}
+/* 1. Ocultar la hamburguesa a partir de 835px */
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    /* 2. Forzar que el menú NO esté colapsado */
+    .collapse.navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    /* 3. Asegurar que los items estén en fila y centrados */
+    .navbar-nav {
+        flex-direction: row !important;
+        width: 100%;
+        justify-content: flex-end; /* Alinea los links a la derecha */
+        gap: 15px; /* Espacio entre botones */
+    }
+
+    /* 4. Quitar márgenes extra que Bootstrap pone en móvil */
+    .nav-item {
+        margin: 0;
+    }
+}
+/* Forzar el menú completo a los 834px */
+@media (max-width: 834px) {
+    .navbar-toggler {
+        display: block; /* Muestra la hamburguesa hasta los 834px */
+    }
+    .navbar-collapse.collapse {
+        display: none !important; /* Esconde el menú hasta que se pulse el botón */
+    }
+    .navbar-collapse.collapse.show {
+        display: block !important; /* Muestra el desplegable al abrir */
+    }
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+}
+
+@media (min-width: 835px) {
+    .navbar-toggler {
+        display: none; /* Esconde la hamburguesa en pantallas grandes */
+    }
+    .navbar-collapse.collapse {
+        display: flex !important; /* Muestra el menú completo horizontal */
+    }
+}
+
+
+/* --- Arreglo para el Menú de Proyectos (Responsive) --- */
+
+/* Ajuste general para el menú en Bootstrap */
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Centra verticalmente los textos y el botón */
+}
+
+/* --- Media Query para el punto de quiebre conflictivo (768px - 1000px) --- */
+@media (min-width: 768px) and (max-width: 1000px) {
+    
+    /* 1. Forzamos que la lista se mantenga horizontal */
+    .navbar-collapse.collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important; /* IMPIDE que se apilen */
+        margin-left: auto; /* Empuja el menú a la derecha */
+        gap: 10px; /* Reducimos el espacio entre opciones (estaba muy ancho) */
+    }
+
+    /* 2. Hacemos el texto un poco más pequeño para que quepa */
+    .nav-link {
+        font-size: 13px !important; /* Bajamos de 14px a 13px */
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    /* 3. Ajustamos el botón de contacto para que no ocupe tanto espacio lateral */
+    .btn-contacto-bs {
+        margin-left: 5px !important;
+        padding: 6px 15px !important; /* Botón más compacto */
+        font-size: 13px !important;
+    }
+}
+@media (min-width: 834px) {
+    /* 1. Forzamos que el contenedor ocupe el 100% sin márgenes laterales */
+    .container-fluid {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 2. El logo a la izquierda */
+    .navbar-brand {
+        margin-right: 0; 
+    }
+
+    /* 3. El menú a la derecha con espacio interno mínimo */
+    .navbar-nav {
+        margin-left: auto !important; /* Empuja todo a la derecha */
+        flex-direction: row !important;
+        gap: 5px !important; /* Espacio mínimo entre botones */
+    }
+
+    .nav-link {
+        font-size: 20px !important;
+        padding-left: 6px !important;  /* Casi sin espacio lateral */
+        padding-right: 6px !important;
+        white-space: nowrap !important; /* Prohibido saltar de línea */
+    }
+
+    /* 4. El botón de contacto más compacto para que no empuje a los demás */
+    .btn-contacto-bs {
+        margin-left: 5px !important;
+        padding: 6px 12px !important; 
+        font-size: 20px !important;
+    }
+}
+@media (min-width: 1280px) {
+    /* 1. Ajuste del contenedor del Nav */
+    nav {
+        padding: 20px 50px; /* Más espacio lateral */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 2. Crecimiento del Logo */
+    .nav-logo img, 
+    .logo { 
+        height: 80px; /* Ajusta este valor según qué tan grande lo quieras */
+        width: auto;
+        transition: all 0.3s ease;
+    }
+
+    /* 3. Tipografía de los botones a 31px */
+    .nav-links a, 
+    .menu-link {
+        font-size: 31px !important;
+        font-weight: 700; /* Un poco de grosor para que se vea legible a ese tamaño */
+        margin: 0 25px; /* Más espacio entre botones para que no choquen */
+        text-decoration: none;
+        color: white; /* O el color que estés usando */
+    }
+
+    /* Opcional: Ajuste del botón de contacto si es estilo cápsula */
+    .btn-contacto-nav {
+        font-size: 31px !important;
+        padding: 10px 40px;
+        border-radius: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.hero {
+    background-color: #231f5c; /* Azul oscuro del fondo */
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, #231f5c 0%, #1a1745 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elementos decorativos de fondo (Opcional) */
+.hero::before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triángulo decorativo */
+    z-index: 1;
+}
+
+/* Títulos */
+.hero h1 {
+    color: #f39223; /* Naranja de la imagen */
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 600px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+    z-index: 2;
+}
+
+/* Botón de Contacto */
+.hero button {
+    background-color: #f39223;
+    color: #1a1745;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 20px; /* Bordes redondeados como en la imagen */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: capitalize;
+}
+
+.hero button:hover {
+    background-color: #ffaa45;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Limpieza de enlace */
+.hero a {
+    text-decoration: none;
+    z-index: 2;
+}
+@media (min-width: 834px) {
+    /* 1. Ajuste del contenedor Hero */
+    .hero {
+        padding: 0 15%; /* Un poco más de aire a los lados */
+    }
+
+    /* 2. Tamaño del Título Principal (H1) */
+    .hero h1 {
+        font-size: 49px !important; /* Ajustado a tu requerimiento */
+        max-width: 800px; /* Permitimos que ocupe más espacio horizontal */
+        margin-bottom: 30px;
+    }
+
+    /* 3. Tamaño de la Descripción (H2) */
+    .hero h2 {
+        font-size: 20px !important; /* Ajustado a tu requerimiento */
+        max-width: 650px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+
+    /* 4. Ajuste opcional del botón para que no se vea pequeño */
+    .hero button {
+        padding: 18px 50px;
+        font-size: 1.2rem;
+        border-radius: 25px;
+    }
+}
+@media (min-width: 834px) {
+    /* Ajuste del contenedor Hero */
+    .hero {
+        /* Reducimos el padding de la izquierda al 5% o 7% para pegarlo más al borde */
+        padding-left: 5% !important; 
+        padding-right: 15%; /* Mantenemos más espacio a la derecha para equilibrio */
+        align-items: flex-start; /* Asegura que todo empiece desde la izquierda */
+    }
+
+    /* Título H1 */
+    .hero h1 {
+        font-size: 49px !important;
+        max-width: 700px; /* Le damos más aire para que crezca horizontalmente */
+        text-align: left;
+        margin-left: 0;
+    }
+
+    /* Descripción H2 */
+    .hero h2 {
+        font-size: 20px !important;
+        max-width: 600px;
+        text-align: left;
+        margin-left: 0;
+    }
+}
+@media (min-width: 1280px) {
+    /* 1. Ajuste del contenedor Hero */
+    .hero {
+        padding-left: 8% !important; /* Equilibrio visual en pantallas anchas */
+        padding-right: 15%;
+    }
+
+    /* 2. Título Principal (H1) a 61px */
+    .hero h1 {
+        font-size: 61px !important;
+        max-width: 900px; /* Permitimos más ancho para la tipografía grande */
+        margin-bottom: 35px;
+        line-height: 1.1;
+    }
+
+    /* 3. Descripción (H2) a 31px */
+    .hero h2 {
+        font-size: 31px !important;
+        max-width: 850px;
+        line-height: 1.4;
+        margin-bottom: 60px;
+        color: #ffffff; /* Un poco más de brillo para legibilidad */
+    }
+
+    /* 4. Botón de Contacto con tipografía de 31px */
+    .hero button {
+        font-size: 31px !important;
+        padding: 20px 60px;
+        border-radius: 40px; /* Aumentamos el redondeado para mantener estilo cápsula */
+        transition: all 0.3s ease;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Estilos para la sección de Habilidades (Grid) --- */
+
+#habilidades {
+    background-color: #231f5c; /* Asegúrate de que este es el color de fondo */
+    color: white;
+    padding: 60px 10%; /* Padding lateral alineado con el resto del sitio */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el bloque entero de h1 + grid */
+    text-align: center;
+}
+
+#habilidades h1 {
+    color: #f39223; /* Naranja de la referencia */
+    font-size: 31px; /* Tamaño definido para h1 */
+    font-weight: 800;
+    margin-bottom: 50px; /* Espacio antes de los iconos */
+    text-align: center;
+    text-transform: capitalize; /* "habilidades" -> "Habilidades" */
+}
+
+/* 1. ELIMINAR VIÑETAS Y ACTIVAR EL GRID CENTRADO */
+#habilidades ul {
+    list-style: none; /* <- ESTO ELIMINA LOS PUNTOS (.) */
+    padding: 0;
+    margin: 0;
+    
+    display: grid;
+    /* Crea 3 columnas iguales en móviles */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    gap: 30px; /* Espacio entre los iconos */
+    
+    /* Centra la cuadrícula entera horizontalmente */
+    justify-items: center; 
+    align-items: center; 
+    
+    /* Ancho máximo para que no se estiren demasiado */
+    max-width: 350px; 
+    width: 100%;
+}
+
+/* 2. ALINEAR LOS ÚLTIMOS DOS ICONOS (PREMIERE Y FIGMA) */
+/* Esto hace que el 4to y 5to icono se centren bajo los tres primeros, 
+   formando la pirámide invertida de la imagen original */
+
+#habilidades ul li:nth-child(4) {
+    grid-column: 1 / 2; /* Premiere en la primera columna */
+    justify-self: center; /* Centrado dentro de su columna */
+}
+
+#habilidades ul li:nth-child(5) {
+    grid-column: 2 / 3; /* Figma en la segunda columna */
+    justify-self: center; /* Centrado dentro de su columna */
+}
+
+/* 3. ESTILO DE LAS TARJETAS DE ICONO */
+#habilidades ul li img {
+    /* Ajusta el tamaño según tus imágenes originales */
+    width: 80px; 
+    height: 80px;
+    object-fit: contain; /* Evita que se estiren */
+    
+    background-color: transparent; /* Si tus PNG ya tienen fondo, déjalo transparente */
+    
+    /* Asegúrate de que las imágenes tengan el borde redondeado */
+    border-radius: 18px; 
+    padding: 5px; /* Pequeño espacio interno */
+    
+    /* Efecto hover suave (opcional) */
+    transition: transform 0.3s ease;
+}
+
+#habilidades ul li img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#procesos {
+    background-color: #231f5c;
+    padding: 50px 0;
+    overflow: hidden; /* Esto corta las imágenes que sobran */
+    width: 100%;
+}
+
+#procesos h1 {
+    color: #f39223;
+    font-size: 31px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex; /* Pone las imágenes en fila */
+    flex-wrap: nowrap; /* IMPIDE que se vayan hacia abajo */
+    width: max-content; /* Deja que el riel crezca horizontalmente */
+    animation: scroll-horizontal 40s linear infinite; /* Movimiento constante */
+}
+
+.slider-track img {
+    width: 300px; /* Ancho de tu tarjeta */
+    margin: 0 10px; /* Espacio entre ellas */
+    flex-shrink: 0; /* IMPIDE que se aplasten */
+}
+
+/* La animación que las mueve de derecha a izquierda */
+@keyframes scroll-horizontal {
+    0% { transform: translateX(0); }
+    100% { 
+        /* Movemos el ancho de las primeras 8 imágenes */
+        /* (300px + 20px de margen) * 8 = 2560px */
+        transform: translateX(-2560px); 
+    }
+}
+
+/* Pausa cuando pasas el mouse */
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 834px) {
+    
+    #proyectos {
+        padding: 80px 0;
+    }
+
+    .titulo-seccion {
+        font-size: 48px;
+        margin-bottom: 60px;
+        color: #e58210;
+    }
+
+    /* 1. EL CONTENEDOR CON BORDE NARANJA (PANEL) */
+    /* Este contenedor centra y limita el ancho de todo el bloque RRSS */
+    .contenedor-borde-naranja {
+        border: 2px solid #f39223; /* Borde naranja de la referencia de UI */
+        border-radius: 25px;
+        padding: 40px;
+        width: 90%; /* Ocupa casi todo el ancho disponible */
+        max-width: 1200px; /* Límite crucial para que no se vean gigantes en PC */
+        margin-bottom: 60px; /* Espacio entre categorías */
+        
+        /* Alineamos título y galería a la izquierda */
+        align-items: flex-start; 
+    }
+
+    /* El badge de la categoría (Redes Sociales, etc) */
+    .categoria-badge {
+        font-size: 28px;
+        margin-bottom: 30px;
+        position: static; /* Quitamos posicionamiento absoluto */
+        color: #f39223;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    /* 2. LA GALERÍA HORIZONTAL (FLEXBOX) */
+    .galeria-proyectos {
+        display: flex;
+        flex-direction: row; /* Imágenes una al lado de la otra */
+        flex-wrap: nowrap; /* Fuerza una sola línea */
+        justify-content: space-around; /* Distribuye espacio entre capturas */
+        gap: 20px; /* Espacio entre capturas */
+        width: 100%;
+        overflow-x: auto; /* Por seguridad en pantallas pequeñas de tablet sobran imágenes */
+    }
+
+    /* 3. TAMAÑO DE LAS IMÁGENES: Aquí está la solución */
+    .proyecto-item {
+        /* flex-grow, flex-shrink y flex-basis controlan el tamaño proporcionalmente */
+        flex: 1 1 0; 
+        
+        /* Ajuste específico para REDES SOCIALES (4 fotos en línea nítidas) */
+        max-width: 24%; /* El 24% asegura que caben las 4 y se ven grandes pero no estiradas */
+    }
+
+    .proyecto-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        /* Sombra sutil para dar profundidad como en Diseño UI */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
+        /* Efecto hover suave */
+        transition: transform 0.3s ease;
+    }
+    
+
+    .proyecto-item img:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+}/* Limpieza global para evitar espacios en blanco */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #231f5c; /* El azul correspondiente a tu marca */
+    overflow-x: hidden;
+}
+
+#proyectos {
+    background-color: #231f5c; /* Refuerza el color en la sección */
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 0;
+}
+
+/* Eliminar fondos blancos accidentales en los contenedores */
+.contenedor-borde-naranja {
+    background-color: transparent !important;
+    border: 2px solid #f39223;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+/* Asegurar que las imágenes no traigan su propio fondo blanco */
+.proyecto-item img {
+    background-color: transparent !important;
+    display: block;
+}
+/* 1. Fondo Global y Reseteo */
+html, body {
+    background-color: #231f5c;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 2. Centrado de la Sección Principal */
+#proyectos {
+    background-color: #231f5c;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los hijos horizontalmente */
+    justify-content: center;
+    padding: 80px 0;
+}
+
+/* 3. El Contenedor Panel (Borde Naranja) */
+.contenedor-borde-naranja {
+    border: 2px solid #f39223;
+    border-radius: 25px;
+    padding: 40px;
+    margin: 0 auto 60px auto; /* "auto" en los lados centra el bloque */
+    width: 90%;
+    max-width: 1100px; /* Límite para no estirar las fotos */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra títulos y galerías internamente */
+    box-sizing: border-box;
+}
+
+.titulo-seccion {
+    color: #f39223;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.categoria-badge {
+    color: #f39223;
+    font-size: 24px;
+    margin-bottom: 35px;
+    text-align: center;
+    width: 100%;
+}
+
+/* 4. Galería de Imágenes */
+.galeria-proyectos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las imágenes si sobran espacios */
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.proyecto-item {
+    display: flex;
+    justify-content: center;
+}
+
+.proyecto-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* --- AJUSTES PARA DESKTOP (834px+) --- */
+@media (min-width: 834px) {
+    .titulo-seccion {
+        font-size: 49px;
+    }
+
+    /* Redes Sociales: 4 en línea centradas */
+    .contenedor-borde-naranja:nth-of-type(2) .proyecto-item {
+        flex: 1;
+        max-width: 22%; /* Evita que crezcan demasiado */
+    }
+
+    /* Identidad Corporativa: 2 grandes centradas */
+    .galeria-identidad .proyecto-item {
+        flex: 1;
+        max-width: 45%;
+    }
+    .synapciaparrafo {
+ color: #d9d9d9;
+ font-size: 25px;
+}
+}
+.synapciaparrafo {
+ color: #d9d9d9;
+ font-size: 16px;
+}
+@media (min-width: 1240px) {
+    .synapciaparrafo {
+ color: #d9d9d9;
+ font-size: 31px;
+}
+
+
+
+
+
+
+
+
+#contacto {
+    background-color: #231f5c;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contacto h1 {
+    color: #f39223;
+    font-size: 31px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* El contenedor del formulario con borde naranja */
+#contacto form {
+    border: 2px solid #f39223;
+    border-radius: 30px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 360px; /* Tamaño ideal para móvil */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado automático entre campos */
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Estilo común para inputs y textarea */
+#contacto input, 
+#contacto textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #d9d9d9; /* Color gris de tu referencia */
+    color: #333;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* Estilo específico para el textarea */
+#contacto textarea {
+    resize: none; /* Evita que el usuario lo deforme */
+    height: 150px;
+}
+
+/* Placeholder (el texto interno antes de escribir) */
+#contacto input::placeholder, 
+#contacto textarea::placeholder {
+    color: #757575;
+}
+
+/* Contenedor del botón para alinearlo a la derecha */
+#contacto form div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* El botón de Enviar tipo cápsula */
+#contacto button {
+    background-color: #f39223;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 35px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#contacto button:hover {
+    background-color: #e58210;
+    transform: scale(1.05);
+}
+
+#contacto button:active {
+    transform: scale(0.95);
+}
+@media (min-width: 1280px) {
+    /* 1. Título de sección a 61px */
+    #contacto h1 {
+        font-size: 61px !important;
+        margin-bottom: 60px;
+    }
+
+    /* 2. Formulario más ancho para equilibrar el texto grande */
+    #contacto form {
+        max-width: 800px !important; /* Aumentamos el ancho para que no se vea angosto */
+        padding: 60px 50px;
+        gap: 30px;
+    }
+
+    /* 3. Tipografía interna y placeholders a 25px */
+    #contacto input, 
+    #contacto textarea {
+        font-size: 25px !important;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    /* Asegura que el texto que escribe el usuario y el placeholder sean de 25px */
+    #contacto input::placeholder, 
+    #contacto textarea::placeholder {
+        font-size: 25px;
+    }
+
+    /* 4. Botón de Enviar a 25px */
+    #contacto button {
+        font-size: 25px !important;
+        padding: 18px 60px;
+        border-radius: 35px; /* Estilo cápsula más pronunciado */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #100D26; /* El azul profundo de tu identidad */
+    padding: 40px 20px 20px;
+    width: 100%;
+    color: white;
+}
+
+/* Contenedor superior: Logo y Redes */
+.footer-top {
+    display: flex;
+    justify-content: space-between; /* Separa el logo a la izquierda y redes a la derecha */
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+}
+
+.footer-logo img {
+    height: 35px; /* Ajuste para que se vea similar a tu referencia */
+    width: auto;
+}
+
+/* Contenedor de iconos sociales */
+.footer-social {
+    display: flex;
+    gap: 15px; /* Espacio entre Instagram y WhatsApp */
+}
+
+.footer-social img {
+    width: 32px; /* Tamaño de los iconos sociales */
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
+}
+
+/* Línea divisoria horizontal */
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Línea sutil blanca */
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+}
+
+/* Créditos finales */
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7); /* Texto un poco más suave */
+    font-weight: 400;
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 480px) {
+    .footer-top {
+        flex-direction: column; /* Apila logo sobre redes en pantallas muy angostas */
+        gap: 20px;
+        text-align: center;
+    }
+}

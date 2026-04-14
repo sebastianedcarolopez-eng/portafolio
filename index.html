@@ -13,46 +13,86 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 
 <body>
+
+
+
+
     <header>
-        <div><img src="./assets/imagenes/logo.png" alt="logo"></div>
-        <nav>
-            <ul>
 
-                <li> <a href="#inicio">
-                        <h2>inicio</h2>
-                    </a> </li>
-                <li> <a href="#habilidades">
-                        <h2>habilidades</h2>
-                    </a> </li>
-                <li> <a href="#procesos"> </a>
-                    <h2>procesos</h2>
-                </li>
-                <li> <a href="#proyectos"> </a>
-                    <h2>proyectos</h2>
-                </li>
-                <li> <a href="#contacto"> </a>
-                    <h2>contacto</h2>
-                </li>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #231f5c;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/imagenes/logo.png" alt="logo" height="35">
+                </a>
 
-            </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#habilidades">Habilidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#procesos">Procesos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#proyectos">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-contacto-bs" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
+
+
+
+
+
+
+
     <mein>
-        <section id="inicio">
+
+
+
+
+
+        <section class="hero" id="inicio">
 
             <h1>Diseñador UX/UI</h1>
 
-            <h2>Soy Sebastián Caro un diseñador gráfico apasionado por la creación de experiencias visuales impactantes
+            <h2>Soy Sebastián Caro, un diseñador gráfico apasionado por la creación de experiencias visuales impactantes
                 y una mente
                 creativa, transformo ideas en soluciones visuales efectivas.</h2>
-            <a href="https://www.facebook.com/?locale=es_LA">
-                <h3><button>contacto</button></h3>
+            <a href="https://www.facebook.com/?locale=es_LA" class="hero-link">
+                <button>contacto</button>
+            </a>
             </a>
         </section>
+
+
+
+
+
+
+
+
 
         <section id="habilidades">
             <h1>habilidades</h1>
@@ -67,64 +107,98 @@
 
         </section>
 
+
+
+
+
+
+
+
+
+
+
         <section id="procesos">
-
             <h1>Procesos</h1>
-            <div>
-                <img src="./assets/imagenes/Property 1=benchmak.png" alt="">
-                <img src="./assets/imagenes/Property 1=encuesta.png" alt="">
-                <img src="./assets/imagenes/Property 1=entrevista.png" alt="">
-                <img src="./assets/imagenes/Property 1=Foda.png" alt="">
-                <img src="./assets/imagenes/Property 1=Variant5.png" alt="">
-                <img src="./assets/imagenes/Property 1=Variant6.png" alt="">
-                <img src="./assets/imagenes/Property 1=Variant7.png" alt="">
-                <img src="./assets/imagenes/Property 1=Variant8.png" alt="">
-
+            <div class="slider-container">
+                <div class="slider-track">
+                    <img src="./assets/imagenes/Property 1=benchmak.png" alt="">
+                    <img src="./assets/imagenes/Property 1=encuesta.png" alt="">
+                    <img src="./assets/imagenes/Property 1=entrevista.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Foda.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant5.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant6.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant7.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant8.png" alt="">
+                    <img src="./assets/imagenes/Property 1=benchmak.png" alt="">
+                    <img src="./assets/imagenes/Property 1=encuesta.png" alt="">
+                    <img src="./assets/imagenes/Property 1=entrevista.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Foda.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant5.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant6.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant7.png" alt="">
+                    <img src="./assets/imagenes/Property 1=Variant8.png" alt="">
+                </div>
             </div>
         </section>
+
+
+
+
+
+
+
 
         <section id="proyectos">
+            <h1 class="titulo-seccion">Proyectos</h1>
 
-            <br>
-            <h1>Proyectos</h1>
-            <div>
+            <div class="contenedor-borde-naranja">
+                <h2 class="categoria-badge">Diseño UI</h2>
+                <div class="galeria-proyectos">
+                    <div class="proyecto-item"><img src="./assets/imagenes/Inicio synapcia.png" alt=""></div>
+                    <div class="proyecto-item"><img src="./assets/imagenes/synapcia doble.png" alt=""></div>
+                    <br>
+                    <p class="synapciaparrafo">Synapcia es una plataforma de aprendizaje en línea diseñada bajo una
+                        filosofía User-First, donde la claridad visual y la accesibilidad son los ejes principales. El
+                        proyecto busca democratizar el acceso al conocimiento técnico mediante una interfaz intuitiva
+                        que elimina fricciones cognitivas.</p>
 
-                <h1>Diseño UI</h1>
-
-                <h2>Synapcia</h2>
-                <img src="./assets/imagenes/Inicio synapcia.png" alt="">
-                <img src="./assets/imagenes/bienvenido synapcia.png" alt="">
-                <img src="./assets/imagenes/registro synapcia.png" alt="">
-            </div>
-
-            <div>
-
-
-                <h1>Redes Sociales</h1>
-                <h2>Expor Feria Maule</h2>
-
-                <img src="./assets/imagenes/expo entrada gratis.png" alt="">
-                <img src="./assets/imagenes/expo que llevar.png" alt="">
-                <img src="./assets/imagenes/expo naturaleza.png" alt="">
-                <img src="./assets/imagenes/expo emprendedores.png" alt="">
-                <img src="./assets/imagenes/expo picnic.png" alt="">
-                <img src="./assets/imagenes/expo ven a comer.png" alt="">
-                <img src="./assets/imagenes/expo disfruta en familia.png" alt="">
-                <h2>Desafío Maule</h2>
-                <img src="./assets/imagenes/desafio 1.png" alt="">
-                <img src="./assets/imagenes/desafio 2.png" alt="">
-
-            </div>
-
-            <div>
-
-                <h1>Identidad Corporativa</h1>
-                <img src="./assets/imagenes/logo optica.png" alt="">
-                <img src="./assets/imagenes/logo apa.png" alt="">
-
-            </div>
-
+                </div>
+            </div>z
         </section>
+
+        <div class="contenedor-borde-naranja">
+            <h2 class="categoria-badge">Redes Sociales</h2>
+            <div class="galeria-proyectos">
+                <div class="row d-flex justify-content-center ">
+                    <div class="proyecto-item col-md-6 col-lg-6"><img src="./assets/imagenes/rrss1.png" alt=""></div>
+                    <div class="proyecto-item col-md-6 col-lg-6"><img src="./assets/imagenes/rrss2.png" alt=""></div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="proyecto-item col-md-6 col-lg-6"><img src="./assets/imagenes/RRSS3.png" alt=""></div>
+                    <div class="proyecto-item col-md-6 col-lg-6 "><img src="./assets/imagenes/rrss4.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor-borde-naranja">
+            <h2 class="categoria-badge">Identidad Corporativa</h2>
+
+            <div class="galeria-proyectos galeria-identidad">
+                <div class="proyecto-item">
+                    <img src="./assets/imagenes/logo optica.png" alt="Logo Optica Popular">
+                </div>
+                <div class="proyecto-item">
+                    <img src="./assets/imagenes/logo apa.png" alt="Logo APA">
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
+
+
+
 
         <section id="contacto">
 
@@ -154,6 +228,20 @@
             </form>
 
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <footer>
             <div class="footer-top">
