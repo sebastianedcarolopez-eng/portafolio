@@ -499,13 +499,87 @@
 
 
 
+.btn-proyecto {
+     background-color: #f39223;
+    color: #1a1745;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 20px; /* Bordes redondeados como en la imagen */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: capitalize;
+}
 
 
+/* --- AJUSTES DE TEXTO POR DISPOSITIVO --- */
+
+/* 1. Tablet (Desde 834px hasta 1279px) */
+@media (min-width: 834px) {
+    .card-investigacion .card-title {
+        font-size: 31px !important;
+    }
+    
+    .card-investigacion .card-subtitle {
+        font-size: 20px !important;
+    }
+
+    .card-investigacion .card-text {
+        font-size: 20px !important;
+    }
+}
+
+/* 2. Escritorio (Desde 1280px en adelante) */
+@media (min-width: 1280px) {
+    .card-investigacion .card-title {
+        font-size: 45px !important;
+    }
+
+    .card-investigacion .card-subtitle {
+        font-size: 31px !important;
+    }
+
+    .card-investigacion .card-text {
+        font-size: 31px !important;
+    }
+}
 
 
+/* Elimina el fondo blanco y aplica tu identidad visual */
+.card-investigacion {
+    background-color: transparent !important; 
+    border: 2px solid #f39223 !important; 
+    border-radius: 20px !important;
+    height: 100%; /* Para que ambas tarjetas tengan la misma altura */
+}
 
+.card-investigacion .card-body {
+    background-color: transparent !important;
+    padding: 30px;
+}
 
+/* Colores de texto para que resalten sobre el azul oscuro */
+.card-investigacion .card-title {
+    color: #f39223 !important;
+    font-weight: 800;
+}
 
+.card-investigacion .card-subtitle {
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-bottom: 15px;
+}
+
+.card-investigacion .card-text {
+    color: #ffffff !important;
+}
+
+/* Alineación de los botones */
+.enlaces-card {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
 
 @media (min-width: 834px) {
     
