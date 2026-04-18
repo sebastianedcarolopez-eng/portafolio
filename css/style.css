@@ -1005,3 +1005,73 @@ hr {
         text-align: center;
     }
 }
+
+
+
+/* Contenedor del texto para darle aire */
+.cuerpo-caso-estudio {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.synapciaparrafo {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Grilla de 2 columnas para los detalles */
+.detalles-proyecto-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Móvil por defecto */
+    gap: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.detalle-bloque p {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 12px;
+    border-left: 2px solid #f39223; /* Detalle naranja lateral */
+    padding-left: 15px;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablet (834px) y Escritorio (1280px) */
+@media (min-width: 834px) {
+    .detalles-proyecto-grid {
+        grid-template-columns: 1fr 1fr; /* Se divide en dos columnas */
+    }
+
+    .synapciaparrafo {
+        font-size: 20px; /* Tamaño solicitado para tablet */
+    }
+}
+
+@media (min-width: 1280px) {
+    .synapciaparrafo {
+        font-size: 31px; /* Tamaño solicitado para escritorio */
+    }
+    
+    .detalle-bloque p {
+        font-size: 18px; /* Un poco más pequeño que el párrafo principal para jerarquía */
+    }
+}
+
+/* Botón estilizado */
+.botonparrafo {
+    background-color: #f39223;
+    color: #231f5c !important;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.botonparrafo:hover {
+    transform: scale(1.05);
+}
